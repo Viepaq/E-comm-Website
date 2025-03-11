@@ -1,101 +1,113 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/Berg.jpg"
+            alt="Mountain landscape"
+            fill
+            className="object-cover brightness-75"
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Content */}
+        <div className="container px-4 py-8 mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-white">
+            PREMIUM SKINCARE<br />FOR THE MODERN MAN
+          </h1>
+          <p className="max-w-[600px] mx-auto text-white/80 mb-8 text-lg">
+            Elevate your daily routine with our scientifically formulated skincare products.
+          </p>
+          <Link href="/shop" className="inline-block">
+            <button className="btn-12">
+              <span>Shop Collection</span>
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Products Preview */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Featured Products</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                id: "1",
+                name: "Day Cream",
+                description: "Lightweight moisturizer with SPF protection",
+                price: "$45",
+                image: "/images/DayCream.jpg"
+              },
+              {
+                id: "2",
+                name: "Body + Hair Shampoo",
+                description: "Dual-action cleanser for body and hair",
+                price: "$35",
+                image: "/images/Shampoo.jpg"
+              },
+              {
+                id: "3",
+                name: "Spot Care",
+                description: "Targeted treatment for imperfections",
+                price: "$28",
+                image: "/images/SpotCare.jpg"
+              }
+            ].map((product) => (
+              <Link href={`/shop/${product.id}`} key={product.id} className="group cursor-pointer">
+                <div className="aspect-square bg-neutral-100 dark:bg-neutral-900 relative rounded-lg overflow-hidden mb-4">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <h3 className="font-semibold mb-2">{product.name}</h3>
+                <p className="text-muted-foreground text-sm mb-2">{product.description}</p>
+                <p className="font-medium">{product.price}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Values */}
+      <section className="py-20 bg-neutral-100 dark:bg-neutral-900">
+        <div className="container px-4 mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-12">The Brutus Standard</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                title: "Premium Quality",
+                description: "Carefully selected ingredients that deliver real results"
+              },
+              {
+                title: "Science-Backed",
+                description: "Formulated with proven active ingredients"
+              },
+              {
+                title: "Made for Men",
+                description: "Designed specifically for men's skincare needs"
+              }
+            ].map((value, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-xl font-semibold">{value.title}</h3>
+                <p className="text-muted-foreground">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
