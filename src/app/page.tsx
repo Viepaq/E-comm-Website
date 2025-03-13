@@ -10,8 +10,8 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/Berg.jpg"
-            alt="Mountain landscape"
+            src="/images/Löwe.png"
+            alt="Lion portrait"
             fill
             className="object-cover brightness-75"
             priority
@@ -27,8 +27,10 @@ export default function Home() {
             Elevate your daily routine with our scientifically formulated skincare products.
           </p>
           <Link href="/shop" className="inline-block">
-            <button className="btn-12">
-              <span>Shop Collection</span>
+            <button className="relative px-8 py-3 font-archivo text-white rounded-md overflow-hidden transition-all duration-300 transform hover:scale-[1.02] group">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#B8BDC7] to-[#8B929C] transition-all duration-300 group-hover:from-[#9BA1AB] group-hover:to-[#6E747E]"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(110deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.4)_30%,rgba(255,255,255,0)_50%)] animate-shimmer"></div>
+              <span className="relative">Shop Collection</span>
             </button>
           </Link>
         </div>

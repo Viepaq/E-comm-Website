@@ -111,7 +111,7 @@ export default function ShopPage() {
                     <button
                       ref={(el) => setButtonRef(el, product.id)}
                       onClick={() => handleAddToCart(product)}
-                      className="bg-[#F8F3EB] hover:bg-[#E8E3DB] text-white font-archivo px-6 py-3 rounded-md transition-colors w-full md:w-auto relative overflow-hidden"
+                      className="bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 font-archivo px-6 py-3 rounded-md transition-all duration-300 w-full md:w-auto relative overflow-hidden shadow-md hover:shadow-lg"
                       disabled={animatingItems[product.id]}
                     >
                       {animatingItems[product.id] ? 'Adding...' : 'Add to Cart'}

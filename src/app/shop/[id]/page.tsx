@@ -95,7 +95,7 @@ export default function ProductPage() {
               <button
                 onClick={handleAddToCart}
                 disabled={isAdding}
-                className="w-full md:w-auto px-8 py-3 bg-[#F8F3EB] hover:bg-[#E8E3DB] text-white font-archivo rounded-md transition-colors relative overflow-hidden"
+                className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 font-archivo rounded-md transition-all duration-300 relative overflow-hidden shadow-md hover:shadow-lg"
               >
                 {isAdding ? 'Adding...' : 'Add to Cart'}
               </button>
@@ -153,7 +153,7 @@ export default function ProductPage() {
 
       {/* Back to Shop */}
       <section className="py-24 bg-neutral-50 dark:bg-neutral-900/50 text-center">
-        <Link href="/shop" className="inline-block bg-[#F8F3EB] hover:bg-[#E8E3DB] text-white font-archivo px-6 py-3 rounded-md transition-colors">
+        <Link href="/shop" className="inline-block bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 font-archivo px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
           Back to Shop
         </Link>
       </section>

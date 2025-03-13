@@ -108,7 +108,7 @@ export default function PaymentPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-[#F8F3EB] hover:bg-[#E8E3DB]">
+                <Button className="w-full bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 transition-all duration-300 shadow-md hover:shadow-lg">
                   Complete Order
                 </Button>
               </CardFooter>
