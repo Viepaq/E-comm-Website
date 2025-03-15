@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import "@/styles/animated-button.css";
+import "@/styles/custom-buttons.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { CartProvider } from "@/context/cart-context";
@@ -37,8 +38,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} min-h-screen bg-background antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <CartProvider>
