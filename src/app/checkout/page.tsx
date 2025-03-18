@@ -15,9 +15,9 @@ export default function CheckoutPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="font-archivo text-3xl font-light tracking-wider mb-4">Your Cart is Empty</h1>
           <p className="text-neutral-600 dark:text-neutral-400 mb-8">Add some products to your cart to continue shopping.</p>
-          <a href="/shop" className="inline-block bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 font-archivo px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
+          <Link href="/shop" className="inline-block bg-gradient-to-r from-[#E8E9ED] to-[#C0C2C9] hover:from-[#D1D3D9] hover:to-[#A5A7AD] text-neutral-800 font-archivo px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg">
             Continue Shopping
-          </a>
+          </Link>
         </div>
       </div>
     )

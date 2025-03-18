@@ -2,7 +2,7 @@
 
 import { useCart } from "@/context/cart-context"
 import Image from "next/image"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { products, type Product } from "@/data/products"
@@ -119,7 +119,7 @@ export default function ShopPage() {
                       className="add-to-cart-btn mt-2"
                       disabled={animatingItems[product.id]}
                     >
-                      {animatingItems[product.id] ? 'Adding...' : 'Add to Cart'}
+                      {animatingItems[product.id] ? "Adding..." : "Add to Cart"}
                     </button>
                   </div>
                 </div>

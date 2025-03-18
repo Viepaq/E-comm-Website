@@ -4,7 +4,6 @@ import { useCart } from "@/context/cart-context"
 import Image from "next/image"
 import { useParams } from "next/navigation"
 import { useState } from "react"
-import { motion } from "framer-motion"
 import Link from "next/link"
 import { products } from "@/data/products"
 
@@ -22,7 +21,7 @@ export default function ProductPage() {
       <div className="min-h-screen pt-32 px-4 md:px-8 bg-black text-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="font-archivo text-3xl font-light tracking-wider mb-4">Product Not Found</h1>
-          <p className="text-neutral-400 mb-8">The product you're looking for doesn't exist.</p>
+          <p className="text-neutral-400 mb-8">The product you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/shop" className="inline-block bg-black text-white font-archivo px-6 py-3 rounded-full transition-colors border border-white">
             Back to Shop
           </Link>

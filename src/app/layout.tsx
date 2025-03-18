@@ -35,11 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} min-h-screen bg-background antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} min-h-screen bg-background antialiased dark:bg-black dark:text-white`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={false}
+          enableSystem
           disableTransitionOnChange
         >
           <CartProvider>
